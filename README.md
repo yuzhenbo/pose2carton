@@ -1,9 +1,24 @@
--------------
+***
+
 环境依赖
-open3d==0.12.0 
+
+open3d==0.9.0.0
+
 tqdm
 
-`pip install open3d==0.12.0 tqdm` (anaconda recommended, python3)
+h5py
+
+`pip install open3d==0.9.0.0`
+
+(anaconda recommended, python3)
+
+(使用 `python -c "import open3d as o3d`进行测试，如不报错则说明安装成功)
+ 
+`pip install tqdm`
+
+(如果使用anaconda进行包管理，比较新的版本里会自带)
+
+`pip install h5py`
 
 * 运行 fbx_parser 和 maya_save_fbx 脚本需要 mayapy 环境(先安装，配置maya)
 
