@@ -1,4 +1,22 @@
--------------
+# Pose2Carton
+A educational project (e.g., using 3D pose to control 3D carton) for learning 3D vision (application of human mesh recovery) or imitation learning
+
+# Requirements
+* code only tested on linux system (ubuntu 16.04)
+* open3d==0.12.0
+* tqdm
+`pip install open3d==0.12.0 tqdm` (anaconda recommended, python3)
+
+# Code structure
+* [`transfer.py`](transfer.py): the main mapping file
+* [`vis.py`](vis.py): visualize the mapping sequence of the corresponding mesh
+* [`pose_samples`](pose_samples/): some samples of SMPL model for one frame
+* [`obj_seq_id`](obj_seq_id/): some samples of SMPL model for temporal sequence
+
+
+To Do
+More details will be updated soon.
+
 环境依赖
 open3d==0.12.0 
 tqdm
