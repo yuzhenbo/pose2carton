@@ -16,6 +16,7 @@ A educational project (e.g., using 3D pose to control 3D carton) for learning 3D
 
 To Do
 More details will be updated soon.
+----------------------------------------------------------------
 
 环境依赖
 open3d==0.12.0 
