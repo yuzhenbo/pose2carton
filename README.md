@@ -3,7 +3,7 @@ A educational project (e.g., using 3D pose to control 3D carton) for learning 3D
 
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
-* open3d==0.12.0
+* open3d==0.9.0
 * tqdm
 `pip install open3d==0.12.0 tqdm` (anaconda recommended, python3)
 
