@@ -22,3 +22,7 @@ tqdm
 * fbx/ 下的fbx建议用blender, maya查看
 
 submission : 最终你需要提交 results 文件夹压缩包, vis.py 生成的可视化录屏
+
+----
+详细稍后会补充说明
+待更新
