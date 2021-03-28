@@ -7,8 +7,10 @@ A educational project (e.g., using 3D pose to control 3D carton) for learning 3D
 * tqdm
 `pip install open3d==0.12.0 tqdm` (anaconda recommended, python3)
 
-# Environment Tutorial
-Update soon
+
+# Environment Tutorial for MAYA
+* Download: [Tutorial1](https://blog.csdn.net/otter1010/article/details/111396928), [Tutorial2](https://knowledge.autodesk.com/zh-hans/support/maya/learn-explore/caas/simplecontent/content/installing-maya-2020-ubuntu.html)
+* Install: [Tutorial](https://blog.csdn.net/White_Idiot/article/details/78253004)
 
 # Dataset requirements 
 Update soon
