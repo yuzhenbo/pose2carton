@@ -14,7 +14,7 @@ A educational project (e.g., using 3D pose to control 3D carton) for learning 3D
 * Install: [Tutorial](https://blog.csdn.net/White_Idiot/article/details/78253004)
 
 # FBX from the internet
-[Tutorial](fbx_from_the_internet.md)
+[Tutorial](doc/fbx_from_the_internet.md)
 
 # Dataset requirements 
 Update soon
@@ -42,4 +42,4 @@ Run vis.py (to get more clear visualization, press ctrl + 1 / ctrl + 2 / ctrl + 
 The code is under Apache-2.0 License.
 
 # For EE228 students from SJTU
-Please read course project [requirements](EE228.md). 
+Please read course project [requirements](doc/EE228.md). 
