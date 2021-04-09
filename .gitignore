@@ -13,6 +13,7 @@ obj*/
 
 *.jpg 
 *.png 
+!img/*.png
 
 # *.mp4 (included on github)
 # *.pkl (included on github)
