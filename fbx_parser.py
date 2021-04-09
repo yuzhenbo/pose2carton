@@ -89,8 +89,14 @@ def record_info(root, jointDict, geo_name, file_info):
         if val['pa'] != 'None':
             file_info.write('hier {0} {1}\n'.format(val['pa'], key))
     
-def record_obj(root, geoList, file_obj):
+def record_obj(root, geoList, file_obj, obj_name):
     start_v_number = 1
+    # save texture map, obj, mtl to intermediate files 
+    cmds.select(geoList[0]) # select a mesh.
+    output_filename = os.path.splitext(obj_name)[0] + '_intermediate.obj'
+    cmds.file(output_filename, force=True, op="groups=0;ptgroups=0;materials=1;smoothing=0;normals=1", typ="OBJexport", pr=True, es=True) # save the selected mesh to OBJ file   vtxIndexList = cmds.getAttr(geo + ".vrts", multiIndices=True)
+    cmds.select(clear=True)
+
     for geo in geoList:
         vtxIndexList = cmds.getAttr(geo + ".vrts", multiIndices=True)
         for i in vtxIndexList:
@@ -177,7 +183,7 @@ if __name__ == '__main__':
     # export obj
     # obj_name = 'D:\\ModelResource_Dataset_SIGGRAPH20\\19713.obj'
     with open(obj_name, 'w') as file_obj:
-        record_obj(root_name, geoList, file_obj)
+        record_obj(root_name, geoList, file_obj, obj_name)
     # info_name = 'D:\\ModelResource_Dataset_SIGGRAPH20\\19713.txt'
     with open(info_name, 'w') as file_info:
         record_info(root_name, jointDict, geoList[0], file_info)

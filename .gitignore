@@ -1,0 +1,18 @@
+*.fbx
+*.ply 
+*.txt
+*.mtl
+*.obj
+obj*/
+!samples/*.obj
+
+*.pyc
+
+*.zip 
+*.tar
+
+*.jpg 
+*.png 
+
+# *.mp4 (included on github)
+# *.pkl (included on github)

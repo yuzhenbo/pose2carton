@@ -24,6 +24,10 @@ If the parsing is successful, you will see generated files like follows:
 
 You may see some error / warning info in the console's logging, but you can ignore them if expected files are all genereated. 
 
+### Example 
+For the matching of 3d model with texture, an example is shown as follows: 
+[posed_texture](../img/posed_texture.png)
+
 ### Others
 * For fbx downloaded from the internet, parsed riginfo(.txt) may contain illegal characters for mayapy to parse. In such cases, you need to clean the `txt` manually
 For example, for models downloaded from mixamo, remove `mixamo::` in the riginfo file. 
