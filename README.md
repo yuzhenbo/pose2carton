@@ -3,7 +3,7 @@ A educational project (e.g., using 3D pose to control 3D carton) for learning 3D
 
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
-* open3d==0.11.0(*if you want to try online models, use open3d 0.10.0 along with your own video recording tool to save visualization*)
+* open3d==0.11.0(**if you want to try online models, use open3d 0.10.0 along with your own video recording tool to save visualization**)
 * tqdm
 * opencv-python
 

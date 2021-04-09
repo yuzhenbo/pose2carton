@@ -26,7 +26,8 @@ You may see some error / warning info in the console's logging, but you can igno
 
 ### Example 
 For the matching of 3d model with texture, an example is shown as follows: 
-[posed_texture](../img/posed_texture.png)
+
+![posed_texture](../img/posed_texture.png)
 
 ### Others
 * For fbx downloaded from the internet, parsed riginfo(.txt) may contain illegal characters for mayapy to parse. In such cases, you need to clean the `txt` manually
