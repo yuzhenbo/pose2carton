@@ -10,12 +10,10 @@ A educational project (e.g., using 3D pose to control 3D carton) for learning 3D
 `pip install -r requirements.txt` (anaconda recommended, python3)
 
 
-# Environment Tutorial for MAYA
-* Download: [Tutorial1](https://blog.csdn.net/otter1010/article/details/111396928), [Tutorial2](https://knowledge.autodesk.com/zh-hans/support/maya/learn-explore/caas/simplecontent/content/installing-maya-2020-ubuntu.html)
-* Install: [Tutorial](https://blog.csdn.net/White_Idiot/article/details/78253004)
-
-# FBX from the internet
-[Tutorial](doc/fbx_from_the_internet.md)
+# Tutorials
+* For maya download & install: [Tutorial1](https://blog.csdn.net/otter1010/article/details/111396928), [Tutorial2](https://knowledge.autodesk.com/zh-hans/support/maya/learn-explore/caas/simplecontent/content/installing-maya-2020-ubuntu.html) [Tutoria3](https://blog.csdn.net/White_Idiot/article/details/78253004)
+* For SMPL, refer to [webpage](https://smpl.is.tue.mpg.de/) or popular implementation [Minimal-IK](https://github.com/CalciferZh/Minimal-IK)
+* For online model matching, refer to [OnlineMatchTutorial](doc/fbx_from_the_internet.md)
 
 
 # Code structure
