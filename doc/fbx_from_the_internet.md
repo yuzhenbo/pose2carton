@@ -40,7 +40,7 @@ cp /path/to/classmt/pose_sample.pkl ./ (#ln -s /path/to/classmt/pose_sample.pkl 
 python transfer.py
 ```
 The results will be saved to `samples/`, you can `cd samples/` and use meshlab to view the results. The generated mesh may have self-collision/intersection, here we simply ignore such case since 
-we only copy rotation vectors here. To avoid such problems, you can refer to a topic `motion retargetting`
+we only copy rotation vectors. To avoid such problems, you can refer to a topic **motion retargetting**
 
 ### Others
 * For fbx downloaded from the internet, parsed riginfo(.txt) may contain illegal characters for mayapy to parse. In such cases, you need to clean the `txt` manually
