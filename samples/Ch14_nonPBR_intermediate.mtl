@@ -1,0 +1,11 @@
+newmtl Ch14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Ch14_1001_Diffuse.jpg
+bump  -bm 1 Ch14_1001_Normal.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Ch14_1001_Specular.png
+Ns 98.00

@@ -29,6 +29,19 @@ For the matching of 3d model with texture, an example is shown as follows:
 
 ![posed_texture](../img/posed_texture.png)
 
+We offer detailed instructions to help you dive into this project
+```
+# clone this repo 
+git clone https://github.com/yuzhenbo/pose2carton
+cd /path/to/pose2carton
+
+# copy smpl pose info from class material 
+cp /path/to/classmt/pose_sample.pkl ./ (#ln -s /path/to/classmt/pose_sample.pkl pose_sample.pkl)
+python transfer.py
+```
+The results will be saved to `samples/`, you can `cd samples/` and use meshlab to view the results. The generated mesh may have self-collision/intersection, here we simply ignore such case since 
+we only copy rotation vectors here. To avoid such problems, you can refer to a topic `motion retargetting`
+
 ### Others
 * For fbx downloaded from the internet, parsed riginfo(.txt) may contain illegal characters for mayapy to parse. In such cases, you need to clean the `txt` manually
 For example, for models downloaded from mixamo, remove `mixamo::` in the riginfo file. 

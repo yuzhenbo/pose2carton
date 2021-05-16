@@ -17,3 +17,7 @@ obj*/
 
 # *.mp4 (included on github)
 # *.pkl (included on github)
+
+!samples/*inter*
+!samples/*.txt
+!samples/*Diffuse.jpg

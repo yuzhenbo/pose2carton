@@ -1,6 +1,9 @@
 # Pose2Carton
 A educational project (e.g., using 3D pose to control 3D carton) for learning 3D vision (application of human mesh recovery) or imitation learning
 
+# Update Notes 
+2021/05/17: Add quick start [instructions](doc/fbx_from_the_internet.md]) to help you dive into this project & Use custom obj loader instead of open3d
+
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
 * open3d==0.11.0(**if you want to try online models, use open3d 0.10.0 along with your own video recording tool to save visualization**)

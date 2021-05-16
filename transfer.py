@@ -14,6 +14,7 @@ import open3d as o3d
 import random 
 import pickle as pkl
 from tqdm import tqdm
+from obj_loader import TriangleMesh
 
 
 # ***** 需要你补充的变量) ******
@@ -66,7 +67,7 @@ def _get_extra_uv_lines(infofile):
     *if you do no use model downloaded elsewhere, you do not need to use this function*
     """
     infile = infofile.replace(".txt", "_intermediate.obj")
-    assert osp.exists(infile), "Can not find file {}, check whether you are using model downloaded from the internet. If so, run maya parser first"
+    assert osp.exists(infile), "Can not find file {}, check whether you are using model downloaded from the internet. If so, run maya parser first".format(infile)
     lines = open(infile, "r").readlines()
     uv_lines = []
     for line in lines: 
@@ -155,6 +156,11 @@ def transfer_given_pose(human_pose, infoname, is_root_rotated=False):
     meshname = infoname.replace(".txt", ".obj")
     inmesh = o3d.io.read_triangle_mesh(meshname)
     v_posed = np.array(inmesh.vertices)
+
+    custom_inmesh = TriangleMesh(meshname)
+    inmesh.vertices = o3d.utility.Vector3dVector(custom_inmesh.vertices)
+    inmesh.triangles = o3d.utility.Vector3iVector(custom_inmesh.triangles)
+    v_posed = custom_inmesh.vertices
 
     hier = {}
     joint2index = {}
@@ -261,7 +267,7 @@ def transfer_given_pose(human_pose, infoname, is_root_rotated=False):
     }
 
     poses = np.zeros((1, num_joints, 3), dtype=np.float32)
-    # lazy_model_to_smpl = _lazy_get_model_to_smpl(new_index2joint)
+    lazy_model_to_smpl = _lazy_get_model_to_smpl(new_index2joint)
     # if len(lazy_model_to_smpl) < 19:
     #     print("Please set mapping manually")
     #     return None, None
@@ -271,9 +277,9 @@ def transfer_given_pose(human_pose, infoname, is_root_rotated=False):
     #     warn_info = "Lazy mapper can only map {} joints between 3D model and SMPL, you may map manually".format(len(lazy_model_to_smpl))
     #     print(warn_info)
     # print("lazy mapper and manual mapper obtains {}/{} joints respectively, choose the larger one".format(len(lazy_model_to_smpl), len(manual_model_to_smpl)))
-    # model_to_smpl = lazy_model_to_smpl if len(lazy_model_to_smpl) > len(manual_model_to_smpl) else manual_model_to_smpl
+    model_to_smpl = lazy_model_to_smpl if len(lazy_model_to_smpl) > len(manual_model_to_smpl) else manual_model_to_smpl
 
-    model_to_smpl = manual_model_to_smpl
+    # model_to_smpl = manual_model_to_smpl
     # ******* You need to perform mapping for at least 10 joints, otherwise you will receive this assertion ******
     assert len(model_to_smpl) >= 10, "Please map manually and ensure that at least 10 joints are matched"
 
@@ -366,7 +372,8 @@ def transfer_one_frame(infofile, use_online_model=False):
                 for uv_line in extra_uv_lines: 
                     fp.write(uv_line + '\n')
             else: 
-                for f in np.asarray(outmesh.triangles) + 1:
+                # for f in np.asarray(outmesh.triangles) + 1:
+                for f in np.asarray(outmesh.triangles):
                     fp.write('f %d %d %d\n' % (f[0], f[1], f[2]))
         print('transferred finished, save to {} and {} with reference to human pose {}.obj'.format(out_infofile, out_objfile, random_index))
 
@@ -411,7 +418,8 @@ def transfer_one_sequence(infofile, seqfile, use_online_model=False):
                     for uv_line in extra_uv_lines: 
                         fp.write(uv_line + '\n')
                 else: 
-                    for f in np.asarray(outmesh.triangles) + 1:
+                    # for f in np.asarray(outmesh.triangles) + 1:
+                    for f in np.asarray(outmesh.triangles):
                         fp.write('f %d %d %d\n' % (f[0], f[1], f[2]))
         else: 
             print('map the 3D model to SMPL first, you can first try one frame setting')
@@ -455,10 +463,10 @@ if __name__ == '__main__':
     #     transfer_one_frame(infofile)
 
     # for provided models
-    transfer_one_frame("fbx/10559.txt")
-    transfer_one_sequence("fbx/10559.txt", "info_seq_5.pkl")
+    # transfer_one_frame("fbx/10559.txt")
+    # transfer_one_sequence("fbx/10559.txt", "info_seq_5.pkl")
 
     # for possible model downloaded online
     # clean_info("samples/Ch14_nonPBR.txt")
-    # transfer_one_frame("samples/Ch14_nonPBR.txt", use_online_model=True)
+    transfer_one_frame("samples/Ch14_nonPBR.txt", use_online_model=True)
     # transfer_one_sequence("samples/Ch14_nonPBR.txt", "info_seq_5.pkl", use_online_model=True)
