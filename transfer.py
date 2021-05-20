@@ -327,16 +327,16 @@ def transfer_given_pose(human_pose, infoname, is_root_rotated=False):
     outmesh.vertices = o3d.utility.Vector3dVector(v)
 
     # finally save the results for submission. Note that the logic here only saves connectivity. You still need to run vis.py to record visualization 
-    if not osp.exists(osp.join("results", infoname.replace(".txt", ".pkl").replace('/', '_'))): 
-        os.makedirs("./results", exist_ok=True)
-        save_dict = {
-            "infoname": infoname, 
-            "hier": new_hier, 
-            "name2index": new_joint2index, 
-            "model2smpl": model_to_smpl
-        }
-        with open(osp.join("results", str(infoname).replace(".txt", ".pkl").replace('/', '_')), "wb") as f: 
-            pkl.dump(save_dict, f)
+    # if not osp.exists(osp.join("results", infoname.replace(".txt", ".pkl").replace('/', '_'))): 
+    os.makedirs("./results", exist_ok=True)
+    save_dict = {
+        "infoname": infoname, 
+        "hier": new_hier, 
+        "name2index": new_joint2index, 
+        "model2smpl": model_to_smpl
+    }
+    with open(osp.join("results", str(infoname).replace(".txt", ".pkl").replace('/', '_')), "wb") as f: 
+        pkl.dump(save_dict, f)
 
     return outinfo, outmesh
 

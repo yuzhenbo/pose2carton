@@ -2,6 +2,7 @@
 A educational project (e.g., using 3D pose to control 3D carton) for learning 3D vision (application of human mesh recovery) or imitation learning
 
 # Update Notes 
+2021/05/20: Update the saving logic of mapping results(.pkl). **In previous version, pkl will not be overwritten, so if you try mapping multiple times, the pkl will stay as it was in previous mapping. This problem is fixed now, pls ensure that your `results/` is the latest version**
 2021/05/17: Add quick start [instructions](doc/fbx_from_the_internet.md) to help you dive into this project & Use custom obj loader instead of open3d
 
 # Requirements
