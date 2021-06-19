@@ -1,7 +1,9 @@
 # Pose2Carton 
 
 EE228 课程大作业 (https://github.com/yuzhenbo/pose2carton)，利用3D骨架控制3D卡通人物。
+
 项目组别： xxx (初始分配组别)
+
 数据组别： xxx (文档中的组别)
 
 
